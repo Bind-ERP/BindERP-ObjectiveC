@@ -1,0 +1,49 @@
+# SWGInvoiceDetails
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**_iD** | **NSString*** |  | [optional] 
+**series** | **NSString*** |  | [optional] 
+**number** | **NSNumber*** |  | [optional] 
+**clientID** | **NSString*** |  | [optional] 
+**clientName** | **NSString*** |  | [optional] 
+**paymentTerms** | **NSNumber*** |  | [optional] 
+**status** | **NSString*** |  | [optional] 
+**statusCode** | **NSNumber*** |  | [optional] 
+**clientPhoneNumber** | **NSString*** |  | [optional] 
+**clientContact** | **NSString*** |  | [optional] 
+**rFC** | **NSString*** |  | [optional] 
+**createdByID** | **NSString*** |  | [optional] 
+**createdByName** | **NSString*** |  | [optional] 
+**creationDate** | **NSDate*** |  | [optional] 
+**applicationDate** | **NSDate*** |  | [optional] 
+**priceListID** | **NSString*** |  | [optional] 
+**priceListName** | **NSString*** |  | [optional] 
+**locationID** | **NSString*** |  | [optional] 
+**locationName** | **NSString*** |  | [optional] 
+**warehouseID** | **NSString*** |  | [optional] 
+**warehouseName** | **NSString*** |  | [optional] 
+**cFDIPaymentMethod** | **NSString*** |  | [optional] 
+**cFDIPaymentTerm** | **NSString*** |  | [optional] 
+**cFDIAccountNumber** | **NSString*** |  | [optional] 
+**currencyName** | **NSString*** |  | [optional] 
+**exchangeRate** | **NSNumber*** |  | [optional] 
+**purchaseOrder** | **NSString*** |  | [optional] 
+**fiscalID** | **NSString*** |  | [optional] 
+**address** | **NSString*** |  | [optional] 
+**comments** | **NSString*** |  | [optional] 
+**subtotal** | **NSNumber*** |  | [optional] 
+**discount** | **NSNumber*** |  | [optional] 
+**vAT** | **NSNumber*** |  | [optional] 
+**iEPS** | **NSNumber*** |  | [optional] 
+**vATRet** | **NSNumber*** |  | [optional] 
+**iSRRet** | **NSNumber*** |  | [optional] 
+**payments** | **NSNumber*** |  | [optional] 
+**creditNotes** | **NSNumber*** |  | [optional] 
+**products** | [**NSArray&lt;SWGInvoiceDetailsProduct&gt;***](SWGInvoiceDetailsProduct.md) |  | [optional] 
+**services** | [**NSArray&lt;SWGInvoiceDetailsService&gt;***](SWGInvoiceDetailsService.md) |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
