@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **_iD** | **NSString*** |  | [optional] 
+**uUID** | **NSString*** |  | [optional] 
 **series** | **NSString*** |  | [optional] 
 **number** | **NSNumber*** |  | [optional] 
 **clientID** | **NSString*** |  | [optional] 

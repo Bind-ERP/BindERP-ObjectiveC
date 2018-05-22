@@ -1,6 +1,7 @@
 #import "SWGWebHooksApi.h"
 #import "SWGQueryParamCollection.h"
 #import "SWGApiClient.h"
+#import "SWGEditWebHookSubscription.h"
 #import "SWGNewWebHookSubscription.h"
 #import "SWGWebHookPage.h"
 #import "SWGWebHookSubscriptionPage.h"
@@ -54,17 +55,17 @@ NSInteger kSWGWebHooksApiMissingParamErrorCode = 234513;
 ///
 /// Suscribirse a un WebHook
 /// 
-///  @param webHookSubscription  
+///  @param varNewWebHookSubscription  
 ///
 ///  @returns NSObject*
 ///
--(NSURLSessionTask*) webHooksAddWebHookSubscriptionsWithWebHookSubscription: (SWGNewWebHookSubscription*) webHookSubscription
+-(NSURLSessionTask*) webHooksAddWebHookSubscriptionsWithVarNewWebHookSubscription: (SWGNewWebHookSubscription*) varNewWebHookSubscription
     completionHandler: (void (^)(NSObject* output, NSError* error)) handler {
-    // verify the required parameter 'webHookSubscription' is set
-    if (webHookSubscription == nil) {
-        NSParameterAssert(webHookSubscription);
+    // verify the required parameter 'varNewWebHookSubscription' is set
+    if (varNewWebHookSubscription == nil) {
+        NSParameterAssert(varNewWebHookSubscription);
         if(handler) {
-            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"webHookSubscription"] };
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"varNewWebHookSubscription"] };
             NSError* error = [NSError errorWithDomain:kSWGWebHooksApiErrorDomain code:kSWGWebHooksApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
@@ -96,7 +97,7 @@ NSInteger kSWGWebHooksApiMissingParamErrorCode = 234513;
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    bodyParam = webHookSubscription;
+    bodyParam = varNewWebHookSubscription;
 
     return [self.apiClient requestWithPath: resourcePath
                                     method: @"POST"
@@ -124,7 +125,7 @@ NSInteger kSWGWebHooksApiMissingParamErrorCode = 234513;
 ///
 ///  @returns void
 ///
--(NSURLSessionTask*) webHooksDeleteWebHookSubscriptioByIDWithId: (NSString*) _id
+-(NSURLSessionTask*) webHooksDeleteWebHookSubscriptionByIDWithId: (NSString*) _id
     completionHandler: (void (^)(NSError* error)) handler {
     // verify the required parameter '_id' is set
     if (_id == nil) {
@@ -192,7 +193,7 @@ NSInteger kSWGWebHooksApiMissingParamErrorCode = 234513;
 ///
 ///  @returns void
 ///
--(NSURLSessionTask*) webHooksEditWebHookSubscriptionWithWebHookSubscription: (SWGNewWebHookSubscription*) webHookSubscription
+-(NSURLSessionTask*) webHooksEditWebHookSubscriptionWithWebHookSubscription: (SWGEditWebHookSubscription*) webHookSubscription
     completionHandler: (void (^)(NSError* error)) handler {
     // verify the required parameter 'webHookSubscription' is set
     if (webHookSubscription == nil) {

@@ -6,20 +6,20 @@ Name | Type | Description | Notes
 **_iD** | **NSString*** |  | 
 **addressID** | **NSString*** |  | 
 **clientID** | **NSString*** |  | 
-**comments** | **NSString*** |  | [optional] 
 **currencyID** | **NSString*** |  | 
+**locationID** | **NSString*** |  | 
+**orderDate** | **NSDate*** |  | 
+**priceListID** | **NSString*** |  | 
+**warehouseID** | **NSString*** |  | 
+**comments** | **NSString*** |  | [optional] 
 **discountAmount** | **NSNumber*** |  | [optional] 
 **discountType** | **NSNumber*** |  | [optional] 
 **docNumberID** | **NSString*** |  | [optional] 
 **exchangeRate** | **NSNumber*** |  | [optional] 
 **iSRRate** | **NSNumber*** |  | [optional] 
-**locationID** | **NSString*** |  | 
-**orderDate** | **NSDate*** |  | 
-**priceListID** | **NSString*** |  | 
 **purchaseOrder** | **NSString*** |  | [optional] 
 **vATRate** | **NSNumber*** |  | [optional] 
 **vATRetRate** | **NSNumber*** |  | [optional] 
-**warehouseID** | **NSString*** |  | 
 **emails** | **NSArray&lt;NSString*&gt;*** |  | [optional] 
 **products** | [**NSArray&lt;SWGNewOrderProduct&gt;***](SWGNewOrderProduct.md) |  | [optional] 
 **services** | [**NSArray&lt;SWGNewOrderService&gt;***](SWGNewOrderService.md) |  | [optional] 

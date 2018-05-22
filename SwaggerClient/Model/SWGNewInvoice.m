@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"currencyID": @"CurrencyID", @"exchangeRate": @"ExchangeRate", @"iSRRetRate": @"ISRRetRate", @"vATRetRate": @"VATRetRate", @"clientID": @"ClientID", @"locationID": @"LocationID", @"comments": @"Comments", @"vATRate": @"VATRate", @"discountType": @"DiscountType", @"discountAmount": @"DiscountAmount", @"products": @"Products", @"services": @"Services", @"emails": @"Emails", @"warehouseID": @"WarehouseID", @"purchaseOrder": @"PurchaseOrder", @"creditDays": @"CreditDays", @"isFiscalInvoice": @"IsFiscalInvoice", @"showIEPS": @"ShowIEPS", @"number": @"Number", @"cFDIUse": @"CFDIUse", @"account": @"Account", @"payments": @"Payments", @"invoiceDate": @"InvoiceDate", @"priceListID": @"PriceListID", @"serie": @"Serie" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"currencyID": @"CurrencyID", @"clientID": @"ClientID", @"locationID": @"LocationID", @"warehouseID": @"WarehouseID", @"cFDIUse": @"CFDIUse", @"invoiceDate": @"InvoiceDate", @"priceListID": @"PriceListID", @"exchangeRate": @"ExchangeRate", @"iSRRetRate": @"ISRRetRate", @"vATRetRate": @"VATRetRate", @"comments": @"Comments", @"vATRate": @"VATRate", @"discountType": @"DiscountType", @"discountAmount": @"DiscountAmount", @"products": @"Products", @"services": @"Services", @"emails": @"Emails", @"purchaseOrder": @"PurchaseOrder", @"creditDays": @"CreditDays", @"isFiscalInvoice": @"IsFiscalInvoice", @"showIEPS": @"ShowIEPS", @"number": @"Number", @"account": @"Account", @"payments": @"Payments", @"serie": @"Serie" }];
 }
 
 /**
@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"exchangeRate", @"iSRRetRate", @"vATRetRate", @"clientID", @"locationID", @"comments", @"vATRate", @"discountType", @"discountAmount", @"products", @"services", @"emails", @"warehouseID", @"purchaseOrder", @"creditDays", @"isFiscalInvoice", @"showIEPS", @"number", @"cFDIUse", @"account", @"payments", @"serie"];
+  NSArray *optionalProperties = @[@"exchangeRate", @"iSRRetRate", @"vATRetRate", @"comments", @"vATRate", @"discountType", @"discountAmount", @"products", @"services", @"emails", @"purchaseOrder", @"creditDays", @"isFiscalInvoice", @"showIEPS", @"number", @"account", @"payments", @"serie"];
   return [optionalProperties containsObject:propertyName];
 }
 

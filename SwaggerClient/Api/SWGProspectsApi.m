@@ -1,7 +1,8 @@
 #import "SWGProspectsApi.h"
 #import "SWGQueryParamCollection.h"
 #import "SWGApiClient.h"
-#import "SWGProspect.h"
+#import "SWGEditProspect.h"
+#import "SWGNewProspect.h"
 #import "SWGProspectDetails.h"
 #import "SWGProspectListItemPage.h"
 
@@ -58,7 +59,7 @@ NSInteger kSWGProspectsApiMissingParamErrorCode = 234513;
 ///
 ///  @returns NSString*
 ///
--(NSURLSessionTask*) prospectsAddProspectWithVarNewProspect: (SWGProspect*) varNewProspect
+-(NSURLSessionTask*) prospectsAddProspectWithVarNewProspect: (SWGNewProspect*) varNewProspect
     completionHandler: (void (^)(NSString* output, NSError* error)) handler {
     // verify the required parameter 'varNewProspect' is set
     if (varNewProspect == nil) {
@@ -192,7 +193,7 @@ NSInteger kSWGProspectsApiMissingParamErrorCode = 234513;
 ///
 ///  @returns void
 ///
--(NSURLSessionTask*) prospectsEditClientWithProspect: (SWGProspect*) prospect
+-(NSURLSessionTask*) prospectsEditClientWithProspect: (SWGEditProspect*) prospect
     completionHandler: (void (^)(NSError* error)) handler {
     // verify the required parameter 'prospect' is set
     if (prospect == nil) {

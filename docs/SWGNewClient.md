@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **creditAmount** | **NSNumber*** |  | 
 **priceListID** | **NSString*** |  | 
 **accountingNumber** | **NSString*** |  | 
+**address** | [**SWGNewAddress***](SWGNewAddress.md) |  | 
 **email** | **NSString*** |  | [optional] 
 **paymentMethod** | **NSNumber*** |  | [optional] 
 **paymentTerm** | **NSNumber*** |  | [optional] 
@@ -17,7 +18,6 @@ Name | Type | Description | Notes
 **salesEmployeeID** | **NSString*** |  | [optional] 
 **creditEmployeeID** | **NSString*** |  | [optional] 
 **comment** | **NSString*** |  | [optional] 
-**address** | [**SWGNewAddress***](SWGNewAddress.md) |  | [optional] 
 **telephone** | **NSString*** |  | [optional] 
 **accountNumber** | **NSString*** |  | [optional] 
 **defaultDiscount** | **NSNumber*** |  | [optional] 

@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **accountID** | **NSString*** |  | 
 **date** | **NSDate*** |  | 
 **reference** | **NSString*** |  | 
-**comments** | **NSString*** |  | [optional] 
 **amount** | **NSNumber*** |  | 
 **paymentTerm** | **NSNumber*** |  | 
+**comments** | **NSString*** |  | [optional] 
 **exchangeRate** | **NSNumber*** |  | [optional] 
 **exchangeRateAccount** | **NSNumber*** |  | [optional] 
 

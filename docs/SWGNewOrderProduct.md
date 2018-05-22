@@ -5,11 +5,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **_iD** | **NSString*** |  | 
 **price** | **NSNumber*** |  | 
+**qty** | **NSNumber*** |  | 
 **vAT** | **NSNumber*** |  | [optional] 
 **indexNumber** | **NSNumber*** |  | [optional] 
 **iEPS** | **NSNumber*** |  | [optional] 
 **iEPSType** | **NSNumber*** |  | [optional] 
-**qty** | **NSNumber*** |  | 
 **comments** | **NSString*** |  | [optional] 
 **vATExempt** | **NSNumber*** |  | [optional] 
 **requireLot** | **NSNumber*** |  | [optional] 

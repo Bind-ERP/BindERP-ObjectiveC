@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"addressID": @"AddressID", @"clientID": @"ClientID", @"comments": @"Comments", @"currencyID": @"CurrencyID", @"discountAmount": @"DiscountAmount", @"discountType": @"DiscountType", @"docNumberID": @"DocNumberID", @"exchangeRate": @"ExchangeRate", @"iSRRate": @"ISRRate", @"locationID": @"LocationID", @"orderDate": @"OrderDate", @"priceListID": @"PriceListID", @"purchaseOrder": @"PurchaseOrder", @"vATRate": @"VATRate", @"vATRetRate": @"VATRetRate", @"warehouseID": @"WarehouseID", @"emails": @"Emails", @"products": @"Products", @"services": @"Services" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"addressID": @"AddressID", @"clientID": @"ClientID", @"currencyID": @"CurrencyID", @"locationID": @"LocationID", @"orderDate": @"OrderDate", @"priceListID": @"PriceListID", @"warehouseID": @"WarehouseID", @"comments": @"Comments", @"discountAmount": @"DiscountAmount", @"discountType": @"DiscountType", @"docNumberID": @"DocNumberID", @"exchangeRate": @"ExchangeRate", @"iSRRate": @"ISRRate", @"purchaseOrder": @"PurchaseOrder", @"vATRate": @"VATRate", @"vATRetRate": @"VATRetRate", @"emails": @"Emails", @"products": @"Products", @"services": @"Services" }];
 }
 
 /**

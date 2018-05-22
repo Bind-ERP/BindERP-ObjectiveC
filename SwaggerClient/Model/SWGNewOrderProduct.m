@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"_iD": @"ID", @"price": @"Price", @"vAT": @"VAT", @"indexNumber": @"IndexNumber", @"iEPS": @"IEPS", @"iEPSType": @"IEPSType", @"qty": @"Qty", @"comments": @"Comments", @"vATExempt": @"VATExempt", @"requireLot": @"RequireLot", @"selectedImports": @"SelectedImports", @"orderItemID": @"OrderItemID", @"unit": @"Unit" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"_iD": @"ID", @"price": @"Price", @"qty": @"Qty", @"vAT": @"VAT", @"indexNumber": @"IndexNumber", @"iEPS": @"IEPS", @"iEPSType": @"IEPSType", @"comments": @"Comments", @"vATExempt": @"VATExempt", @"requireLot": @"RequireLot", @"selectedImports": @"SelectedImports", @"orderItemID": @"OrderItemID", @"unit": @"Unit" }];
 }
 
 /**

@@ -2,6 +2,7 @@
 #import "SWGQueryParamCollection.h"
 #import "SWGApiClient.h"
 #import "SWGInvoiceDetails.h"
+#import "SWGInvoiceListItemPage.h"
 #import "SWGNewInvoice.h"
 #import "SWGNewPayment.h"
 
@@ -52,7 +53,7 @@ NSInteger kSWGInvoicesApiMissingParamErrorCode = 234513;
 #pragma mark - Api Methods
 
 ///
-/// Agregar factura
+/// Agregar Venta
 /// 
 ///  @param varNewInvoice  
 ///
@@ -118,7 +119,7 @@ NSInteger kSWGInvoicesApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Registrar pago a factura
+/// Registrar pago a venta
 /// 
 ///  @param varNewPayment  
 ///
@@ -252,37 +253,44 @@ NSInteger kSWGInvoicesApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Obtiene los detalles de una venta
-/// 
-///  @param _id ID 
+/// Obtiene la lista de ventas.
+/// El filtro es opcional
+///  @param filter Filters the results, based on a Boolean condition. (optional)
 ///
-///  @returns SWGInvoiceDetails*
+///  @param orderby Sorts the results. (optional)
 ///
--(NSURLSessionTask*) invoicesGetByIDWithId: (NSString*) _id
-    completionHandler: (void (^)(SWGInvoiceDetails* output, NSError* error)) handler {
-    // verify the required parameter '_id' is set
-    if (_id == nil) {
-        NSParameterAssert(_id);
-        if(handler) {
-            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"_id"] };
-            NSError* error = [NSError errorWithDomain:kSWGInvoicesApiErrorDomain code:kSWGInvoicesApiMissingParamErrorCode userInfo:userInfo];
-            handler(nil, error);
-        }
-        return nil;
-    }
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/Invoices/{id}"];
+///  @param top Returns only the first n results. (optional)
+///
+///  @param skip Skips the first n results. (optional)
+///
+///  @returns SWGInvoiceListItemPage*
+///
+-(NSURLSessionTask*) invoicesGetWithFilter: (NSString*) filter
+    orderby: (NSString*) orderby
+    top: (NSNumber*) top
+    skip: (NSNumber*) skip
+    completionHandler: (void (^)(SWGInvoiceListItemPage* output, NSError* error)) handler {
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/Invoices"];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        pathParams[@"id"] = _id;
-    }
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (filter != nil) {
+        queryParams[@"$filter"] = filter;
+    }
+    if (orderby != nil) {
+        queryParams[@"$orderby"] = orderby;
+    }
+    if (top != nil) {
+        queryParams[@"$top"] = top;
+    }
+    if (skip != nil) {
+        queryParams[@"$skip"] = skip;
+    }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
     // HTTP header `Accept`
-    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json", @"text/json", @"application/xml", @"text/xml"]];
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json", @"text/json"]];
     if(acceptHeader.length > 0) {
         headerParams[@"Accept"] = acceptHeader;
     }
@@ -311,42 +319,42 @@ NSInteger kSWGInvoicesApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SWGInvoiceDetails*"
+                              responseType: @"SWGInvoiceListItemPage*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SWGInvoiceDetails*)data, error);
+                                    handler((SWGInvoiceListItemPage*)data, error);
                                 }
                             }];
 }
 
 ///
-/// Obtiene los detalles de una venta
+/// Obtiene los detalles de una venta por número
 /// 
-///  @param number Serie y Número 
+///  @param idOrNumber  
 ///
 ///  @returns SWGInvoiceDetails*
 ///
--(NSURLSessionTask*) invoicesGetByNumberWithNumber: (NSString*) number
+-(NSURLSessionTask*) invoicesGetByNumberWithIdOrNumber: (NSString*) idOrNumber
     completionHandler: (void (^)(SWGInvoiceDetails* output, NSError* error)) handler {
-    // verify the required parameter 'number' is set
-    if (number == nil) {
-        NSParameterAssert(number);
+    // verify the required parameter 'idOrNumber' is set
+    if (idOrNumber == nil) {
+        NSParameterAssert(idOrNumber);
         if(handler) {
-            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"number"] };
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"idOrNumber"] };
             NSError* error = [NSError errorWithDomain:kSWGInvoicesApiErrorDomain code:kSWGInvoicesApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
     }
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/Invoices"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/Invoices/{idOrNumber}"];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (idOrNumber != nil) {
+        pathParams[@"idOrNumber"] = idOrNumber;
+    }
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (number != nil) {
-        queryParams[@"number"] = number;
-    }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
     // HTTP header `Accept`
@@ -392,10 +400,10 @@ NSInteger kSWGInvoicesApiMissingParamErrorCode = 234513;
 /// 
 ///  @param _id ID 
 ///
-///  @returns NSObject*
+///  @returns NSURL*
 ///
 -(NSURLSessionTask*) invoicesGetPDFWithId: (NSString*) _id
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler {
+    completionHandler: (void (^)(NSURL* output, NSError* error)) handler {
     // verify the required parameter '_id' is set
     if (_id == nil) {
         NSParameterAssert(_id);
@@ -418,7 +426,7 @@ NSInteger kSWGInvoicesApiMissingParamErrorCode = 234513;
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
     // HTTP header `Accept`
-    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json", @"text/json", @"application/xml", @"text/xml"]];
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/octet-stream"]];
     if(acceptHeader.length > 0) {
         headerParams[@"Accept"] = acceptHeader;
     }
@@ -447,10 +455,10 @@ NSInteger kSWGInvoicesApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"NSObject*"
+                              responseType: @"NSURL*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((NSObject*)data, error);
+                                    handler((NSURL*)data, error);
                                 }
                             }];
 }

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 # **prospectsAddProspect**
 ```objc
--(NSURLSessionTask*) prospectsAddProspectWithVarNewProspect: (SWGProspect*) varNewProspect
+-(NSURLSessionTask*) prospectsAddProspectWithVarNewProspect: (SWGNewProspect*) varNewProspect
         completionHandler: (void (^)(NSString* output, NSError* error)) handler;
 ```
 
@@ -24,7 +24,7 @@ Agregar Prospecto
 ### Example 
 ```objc
 
-SWGProspect* varNewProspect = [[SWGProspect alloc] init]; // 
+SWGNewProspect* varNewProspect = [[SWGNewProspect alloc] init]; // 
 
 SWGProspectsApi*apiInstance = [[SWGProspectsApi alloc] init];
 
@@ -44,7 +44,7 @@ SWGProspectsApi*apiInstance = [[SWGProspectsApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **varNewProspect** | [**SWGProspect***](SWGProspect.md)|  | 
+ **varNewProspect** | [**SWGNewProspect***](SWGNewProspect.md)|  | 
 
 ### Return type
 
@@ -110,7 +110,7 @@ No authorization required
 
 # **prospectsEditClient**
 ```objc
--(NSURLSessionTask*) prospectsEditClientWithProspect: (SWGProspect*) prospect
+-(NSURLSessionTask*) prospectsEditClientWithProspect: (SWGEditProspect*) prospect
         completionHandler: (void (^)(NSError* error)) handler;
 ```
 
@@ -121,7 +121,7 @@ Editar Prospecto
 ### Example 
 ```objc
 
-SWGProspect* prospect = [[SWGProspect alloc] init]; // 
+SWGEditProspect* prospect = [[SWGEditProspect alloc] init]; // 
 
 SWGProspectsApi*apiInstance = [[SWGProspectsApi alloc] init];
 
@@ -138,7 +138,7 @@ SWGProspectsApi*apiInstance = [[SWGProspectsApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **prospect** | [**SWGProspect***](SWGProspect.md)|  | 
+ **prospect** | [**SWGEditProspect***](SWGEditProspect.md)|  | 
 
 ### Return type
 

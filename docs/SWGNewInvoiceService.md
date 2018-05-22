@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 **_iD** | **NSString*** |  | 
 **title** | **NSString*** |  | 
 **price** | **NSNumber*** |  | 
-**vAT** | **NSNumber*** |  | [optional] 
 **qty** | **NSNumber*** |  | 
+**vAT** | **NSNumber*** |  | [optional] 
 **comments** | **NSString*** |  | [optional] 
 **vATExempt** | **NSNumber*** |  | [optional] 
 **indexNumber** | **NSNumber*** |  | [optional] 

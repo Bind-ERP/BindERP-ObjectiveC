@@ -3,12 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**_iD** | **NSString*** |  | [optional] 
-**code** | **NSString*** |  | [optional] 
-**title** | **NSString*** |  | [optional] 
-**currencyID** | **NSString*** |  | [optional] 
-**sATCompanyAccountID** | **NSString*** |  | [optional] 
-**measurementUnit** | **NSString*** |  | [optional] 
+**_iD** | **NSString*** |  | 
+**code** | **NSString*** |  | 
+**title** | **NSString*** |  | 
+**currencyID** | **NSString*** |  | 
+**sATCompanyAccountID** | **NSString*** |  | 
+**measurementUnit** | **NSString*** |  | 
 **_description** | **NSString*** |  | [optional] 
 **category1ID** | **NSString*** |  | [optional] 
 **category2ID** | **NSString*** |  | [optional] 

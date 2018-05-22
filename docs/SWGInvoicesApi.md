@@ -4,11 +4,11 @@ All URIs are relative to *http://api.bind.com.mx*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**invoicesAddInvoice**](SWGInvoicesApi.md#invoicesaddinvoice) | **POST** /api/Invoices | Agregar factura
-[**invoicesAddPayment**](SWGInvoicesApi.md#invoicesaddpayment) | **POST** /api/Invoices/Payment | Registrar pago a factura
+[**invoicesAddInvoice**](SWGInvoicesApi.md#invoicesaddinvoice) | **POST** /api/Invoices | Agregar Venta
+[**invoicesAddPayment**](SWGInvoicesApi.md#invoicesaddpayment) | **POST** /api/Invoices/Payment | Registrar pago a venta
 [**invoicesDeleteInvoice**](SWGInvoicesApi.md#invoicesdeleteinvoice) | **DELETE** /api/Invoices/{id} | Eliminar factura
-[**invoicesGetByID**](SWGInvoicesApi.md#invoicesgetbyid) | **GET** /api/Invoices/{id} | Obtiene los detalles de una venta
-[**invoicesGetByNumber**](SWGInvoicesApi.md#invoicesgetbynumber) | **GET** /api/Invoices | Obtiene los detalles de una venta
+[**invoicesGet**](SWGInvoicesApi.md#invoicesget) | **GET** /api/Invoices | Obtiene la lista de ventas.
+[**invoicesGetByNumber**](SWGInvoicesApi.md#invoicesgetbynumber) | **GET** /api/Invoices/{idOrNumber} | Obtiene los detalles de una venta por número
 [**invoicesGetPDF**](SWGInvoicesApi.md#invoicesgetpdf) | **GET** /api/Invoices/{id}/pdf | Obtener el PDF de una venta
 [**invoicesGetXML**](SWGInvoicesApi.md#invoicesgetxml) | **GET** /api/Invoices/{id}/xml | Obtener el XML de una venta
 
@@ -19,7 +19,7 @@ Method | HTTP request | Description
         completionHandler: (void (^)(NSString* output, NSError* error)) handler;
 ```
 
-Agregar factura
+Agregar Venta
 
 
 
@@ -30,7 +30,7 @@ SWGNewInvoice* varNewInvoice = [[SWGNewInvoice alloc] init]; //
 
 SWGInvoicesApi*apiInstance = [[SWGInvoicesApi alloc] init];
 
-// Agregar factura
+// Agregar Venta
 [apiInstance invoicesAddInvoiceWithVarNewInvoice:varNewInvoice
           completionHandler: ^(NSString* output, NSError* error) {
                         if (output) {
@@ -69,7 +69,7 @@ No authorization required
         completionHandler: (void (^)(NSError* error)) handler;
 ```
 
-Registrar pago a factura
+Registrar pago a venta
 
 
 
@@ -80,7 +80,7 @@ SWGNewPayment* varNewPayment = [[SWGNewPayment alloc] init]; //
 
 SWGInvoicesApi*apiInstance = [[SWGInvoicesApi alloc] init];
 
-// Registrar pago a factura
+// Registrar pago a venta
 [apiInstance invoicesAddPaymentWithVarNewPayment:varNewPayment
           completionHandler: ^(NSError* error) {
                         if (error) {
@@ -157,31 +157,40 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **invoicesGetByID**
+# **invoicesGet**
 ```objc
--(NSURLSessionTask*) invoicesGetByIDWithId: (NSString*) _id
-        completionHandler: (void (^)(SWGInvoiceDetails* output, NSError* error)) handler;
+-(NSURLSessionTask*) invoicesGetWithFilter: (NSString*) filter
+    orderby: (NSString*) orderby
+    top: (NSNumber*) top
+    skip: (NSNumber*) skip
+        completionHandler: (void (^)(SWGInvoiceListItemPage* output, NSError* error)) handler;
 ```
 
-Obtiene los detalles de una venta
+Obtiene la lista de ventas.
 
-
+El filtro es opcional
 
 ### Example 
 ```objc
 
-NSString* _id = @"_id_example"; // ID
+NSString* filter = @"filter_example"; // Filters the results, based on a Boolean condition. (optional)
+NSString* orderby = @"orderby_example"; // Sorts the results. (optional)
+NSNumber* top = @56; // Returns only the first n results. (optional)
+NSNumber* skip = @56; // Skips the first n results. (optional)
 
 SWGInvoicesApi*apiInstance = [[SWGInvoicesApi alloc] init];
 
-// Obtiene los detalles de una venta
-[apiInstance invoicesGetByIDWithId:_id
-          completionHandler: ^(SWGInvoiceDetails* output, NSError* error) {
+// Obtiene la lista de ventas.
+[apiInstance invoicesGetWithFilter:filter
+              orderby:orderby
+              top:top
+              skip:skip
+          completionHandler: ^(SWGInvoiceListItemPage* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGInvoicesApi->invoicesGetByID: %@", error);
+                            NSLog(@"Error calling SWGInvoicesApi->invoicesGet: %@", error);
                         }
                     }];
 ```
@@ -190,11 +199,14 @@ SWGInvoicesApi*apiInstance = [[SWGInvoicesApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **_id** | [**NSString***](.md)| ID | 
+ **filter** | **NSString***| Filters the results, based on a Boolean condition. | [optional] 
+ **orderby** | **NSString***| Sorts the results. | [optional] 
+ **top** | **NSNumber***| Returns only the first n results. | [optional] 
+ **skip** | **NSNumber***| Skips the first n results. | [optional] 
 
 ### Return type
 
-[**SWGInvoiceDetails***](SWGInvoiceDetails.md)
+[**SWGInvoiceListItemPage***](SWGInvoiceListItemPage.md)
 
 ### Authorization
 
@@ -203,29 +215,29 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml
+ - **Accept**: application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **invoicesGetByNumber**
 ```objc
--(NSURLSessionTask*) invoicesGetByNumberWithNumber: (NSString*) number
+-(NSURLSessionTask*) invoicesGetByNumberWithIdOrNumber: (NSString*) idOrNumber
         completionHandler: (void (^)(SWGInvoiceDetails* output, NSError* error)) handler;
 ```
 
-Obtiene los detalles de una venta
+Obtiene los detalles de una venta por número
 
 
 
 ### Example 
 ```objc
 
-NSString* number = @"number_example"; // Serie y Número
+NSString* idOrNumber = @"idOrNumber_example"; // 
 
 SWGInvoicesApi*apiInstance = [[SWGInvoicesApi alloc] init];
 
-// Obtiene los detalles de una venta
-[apiInstance invoicesGetByNumberWithNumber:number
+// Obtiene los detalles de una venta por número
+[apiInstance invoicesGetByNumberWithIdOrNumber:idOrNumber
           completionHandler: ^(SWGInvoiceDetails* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -240,7 +252,7 @@ SWGInvoicesApi*apiInstance = [[SWGInvoicesApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **number** | **NSString***| Serie y Número | 
+ **idOrNumber** | **NSString***|  | 
 
 ### Return type
 
@@ -260,7 +272,7 @@ No authorization required
 # **invoicesGetPDF**
 ```objc
 -(NSURLSessionTask*) invoicesGetPDFWithId: (NSString*) _id
-        completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
+        completionHandler: (void (^)(NSURL* output, NSError* error)) handler;
 ```
 
 Obtener el PDF de una venta
@@ -276,7 +288,7 @@ SWGInvoicesApi*apiInstance = [[SWGInvoicesApi alloc] init];
 
 // Obtener el PDF de una venta
 [apiInstance invoicesGetPDFWithId:_id
-          completionHandler: ^(NSObject* output, NSError* error) {
+          completionHandler: ^(NSURL* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -294,7 +306,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**NSObject***
+**NSURL***
 
 ### Authorization
 
@@ -303,7 +315,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml
+ - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

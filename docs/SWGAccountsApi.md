@@ -4,15 +4,15 @@ All URIs are relative to *http://api.bind.com.mx*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**accountsAddClient**](SWGAccountsApi.md#accountsaddclient) | **POST** /api/Accounts | Agregar Cuenta Contable
+[**accountsAddAccount**](SWGAccountsApi.md#accountsaddaccount) | **POST** /api/Accounts | Agregar Cuenta Contable
 [**accountsDeleteAccount**](SWGAccountsApi.md#accountsdeleteaccount) | **DELETE** /api/Accounts/{id} | Borrar Cuenta Contable
+[**accountsGet**](SWGAccountsApi.md#accountsget) | **GET** /api/Accounts | Obtiene la lista de cuentas contables.
 [**accountsGetAccountCategories**](SWGAccountsApi.md#accountsgetaccountcategories) | **GET** /api/AccountCategories | Obtiene las categorías de cuentas contables.
-[**accountsGetPriceLists**](SWGAccountsApi.md#accountsgetpricelists) | **GET** /api/Accounts | Obtiene la lista de cuentas contables.
 
 
-# **accountsAddClient**
+# **accountsAddAccount**
 ```objc
--(NSURLSessionTask*) accountsAddClientWithVarNewAccount: (SWGNewAccount*) varNewAccount
+-(NSURLSessionTask*) accountsAddAccountWithVarNewAccount: (SWGNewAccount*) varNewAccount
         completionHandler: (void (^)(NSString* output, NSError* error)) handler;
 ```
 
@@ -28,13 +28,13 @@ SWGNewAccount* varNewAccount = [[SWGNewAccount alloc] init]; //
 SWGAccountsApi*apiInstance = [[SWGAccountsApi alloc] init];
 
 // Agregar Cuenta Contable
-[apiInstance accountsAddClientWithVarNewAccount:varNewAccount
+[apiInstance accountsAddAccountWithVarNewAccount:varNewAccount
           completionHandler: ^(NSString* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGAccountsApi->accountsAddClient: %@", error);
+                            NSLog(@"Error calling SWGAccountsApi->accountsAddAccount: %@", error);
                         }
                     }];
 ```
@@ -111,6 +111,68 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **accountsGet**
+```objc
+-(NSURLSessionTask*) accountsGetWithFilter: (NSString*) filter
+    orderby: (NSString*) orderby
+    top: (NSNumber*) top
+    skip: (NSNumber*) skip
+        completionHandler: (void (^)(SWGAccountPage* output, NSError* error)) handler;
+```
+
+Obtiene la lista de cuentas contables.
+
+
+
+### Example 
+```objc
+
+NSString* filter = @"filter_example"; // Filters the results, based on a Boolean condition. (optional)
+NSString* orderby = @"orderby_example"; // Sorts the results. (optional)
+NSNumber* top = @56; // Returns only the first n results. (optional)
+NSNumber* skip = @56; // Skips the first n results. (optional)
+
+SWGAccountsApi*apiInstance = [[SWGAccountsApi alloc] init];
+
+// Obtiene la lista de cuentas contables.
+[apiInstance accountsGetWithFilter:filter
+              orderby:orderby
+              top:top
+              skip:skip
+          completionHandler: ^(SWGAccountPage* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling SWGAccountsApi->accountsGet: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **NSString***| Filters the results, based on a Boolean condition. | [optional] 
+ **orderby** | **NSString***| Sorts the results. | [optional] 
+ **top** | **NSNumber***| Returns only the first n results. | [optional] 
+ **skip** | **NSNumber***| Skips the first n results. | [optional] 
+
+### Return type
+
+[**SWGAccountPage***](SWGAccountPage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **accountsGetAccountCategories**
 ```objc
 -(NSURLSessionTask*) accountsGetAccountCategoriesWithCompletionHandler: 
@@ -154,68 +216,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json, text/json, application/xml, text/xml
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **accountsGetPriceLists**
-```objc
--(NSURLSessionTask*) accountsGetPriceListsWithFilter: (NSString*) filter
-    orderby: (NSString*) orderby
-    top: (NSNumber*) top
-    skip: (NSNumber*) skip
-        completionHandler: (void (^)(SWGAccountPage* output, NSError* error)) handler;
-```
-
-Obtiene la lista de cuentas contables.
-
-
-
-### Example 
-```objc
-
-NSString* filter = @"filter_example"; // Filters the results, based on a Boolean condition. (optional)
-NSString* orderby = @"orderby_example"; // Sorts the results. (optional)
-NSNumber* top = @56; // Returns only the first n results. (optional)
-NSNumber* skip = @56; // Skips the first n results. (optional)
-
-SWGAccountsApi*apiInstance = [[SWGAccountsApi alloc] init];
-
-// Obtiene la lista de cuentas contables.
-[apiInstance accountsGetPriceListsWithFilter:filter
-              orderby:orderby
-              top:top
-              skip:skip
-          completionHandler: ^(SWGAccountPage* output, NSError* error) {
-                        if (output) {
-                            NSLog(@"%@", output);
-                        }
-                        if (error) {
-                            NSLog(@"Error calling SWGAccountsApi->accountsGetPriceLists: %@", error);
-                        }
-                    }];
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **filter** | **NSString***| Filters the results, based on a Boolean condition. | [optional] 
- **orderby** | **NSString***| Sorts the results. | [optional] 
- **top** | **NSNumber***| Returns only the first n results. | [optional] 
- **skip** | **NSNumber***| Skips the first n results. | [optional] 
-
-### Return type
-
-[**SWGAccountPage***](SWGAccountPage.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -1,6 +1,6 @@
-#import "SWGProspect.h"
+#import "SWGNewProspect.h"
 
-@implementation SWGProspect
+@implementation SWGNewProspect
 
 - (instancetype)init {
   self = [super init];
@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"_iD": @"ID", @"comments": @"Comments", @"company": @"Company", @"email": @"Email", @"isPublic": @"IsPublic", @"phone": @"Phone", @"phoneExt": @"PhoneExt", @"name": @"Name" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"name": @"Name", @"comments": @"Comments", @"company": @"Company", @"email": @"Email", @"isPublic": @"IsPublic", @"phone": @"Phone", @"phoneExt": @"PhoneExt" }];
 }
 
 /**
@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"_iD", @"comments", @"company", @"email", @"isPublic", @"phone", @"phoneExt", ];
+  NSArray *optionalProperties = @[@"comments", @"company", @"email", @"isPublic", @"phone", @"phoneExt"];
   return [optionalProperties containsObject:propertyName];
 }
 

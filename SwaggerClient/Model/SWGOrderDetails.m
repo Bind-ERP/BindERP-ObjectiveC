@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{  }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"_iD": @"ID", @"clientID": @"ClientID", @"clientName": @"ClientName", @"priceListName": @"PriceListName", @"priceListID": @"PriceListID", @"locationName": @"LocationName", @"locationID": @"LocationID", @"warehouseID": @"WarehouseID", @"warehouseName": @"WarehouseName", @"orderDate": @"OrderDate", @"comments": @"Comments", @"number": @"Number", @"address": @"Address", @"clientContact": @"ClientContact", @"phoneNumber": @"PhoneNumber", @"employeeName": @"EmployeeName", @"employeeID": @"EmployeeID", @"statusCode": @"StatusCode", @"purchaseOrder": @"PurchaseOrder", @"status": @"Status", @"currencyName": @"CurrencyName", @"currencyID": @"CurrencyID", @"exchangeRate": @"ExchangeRate", @"rFC": @"RFC", @"serviceSubtotal": @"ServiceSubtotal", @"productSubtotal": @"ProductSubtotal", @"discount": @"Discount", @"vATRate": @"VATRate", @"vAT": @"VAT", @"discountType": @"DiscountType", @"iEPS": @"IEPS", @"iEPSRATE": @"IEPSRATE", @"iSRRet": @"ISRRet", @"iSRRetRate": @"ISRRetRate", @"vatRet": @"VatRet", @"vatRetRate": @"VatRetRate", @"total": @"Total", @"products": @"Products", @"services": @"Services" }];
 }
 
 /**
@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[];
+  NSArray *optionalProperties = @[@"_iD", @"clientID", @"clientName", @"priceListName", @"priceListID", @"locationName", @"locationID", @"warehouseID", @"warehouseName", @"orderDate", @"comments", @"number", @"address", @"clientContact", @"phoneNumber", @"employeeName", @"employeeID", @"statusCode", @"purchaseOrder", @"status", @"currencyName", @"currencyID", @"exchangeRate", @"rFC", @"serviceSubtotal", @"productSubtotal", @"discount", @"vATRate", @"vAT", @"discountType", @"iEPS", @"iEPSRATE", @"iSRRet", @"iSRRetRate", @"vatRet", @"vatRetRate", @"total", @"products", @"services"];
   return [optionalProperties containsObject:propertyName];
 }
 

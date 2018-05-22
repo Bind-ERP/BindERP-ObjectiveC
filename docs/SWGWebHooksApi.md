@@ -5,7 +5,7 @@ All URIs are relative to *http://api.bind.com.mx*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**webHooksAddWebHookSubscriptions**](SWGWebHooksApi.md#webhooksaddwebhooksubscriptions) | **POST** /api/WebHookSubscriptions | Suscribirse a un WebHook
-[**webHooksDeleteWebHookSubscriptioByID**](SWGWebHooksApi.md#webhooksdeletewebhooksubscriptiobyid) | **DELETE** /api/WebHookSubscriptions | Borrar suscripción a WebHook
+[**webHooksDeleteWebHookSubscriptionByID**](SWGWebHooksApi.md#webhooksdeletewebhooksubscriptionbyid) | **DELETE** /api/WebHookSubscriptions | Borrar suscripción a WebHook
 [**webHooksEditWebHookSubscription**](SWGWebHooksApi.md#webhookseditwebhooksubscription) | **PUT** /api/WebHookSubscriptions | Editar suscripción a WebHook
 [**webHooksGetWebHookSampleData**](SWGWebHooksApi.md#webhooksgetwebhooksampledata) | **GET** /api/WebHooks/{eventID} | Obtiene un ejemplo del modelo de datos que envía el WebHook.
 [**webHooksGetWebHookSubscriptions**](SWGWebHooksApi.md#webhooksgetwebhooksubscriptions) | **GET** /api/WebHookSubscriptions | Obtiene la lista de su suscripciones a WebHooks
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 # **webHooksAddWebHookSubscriptions**
 ```objc
--(NSURLSessionTask*) webHooksAddWebHookSubscriptionsWithWebHookSubscription: (SWGNewWebHookSubscription*) webHookSubscription
+-(NSURLSessionTask*) webHooksAddWebHookSubscriptionsWithVarNewWebHookSubscription: (SWGNewWebHookSubscription*) varNewWebHookSubscription
         completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
 ```
 
@@ -25,12 +25,12 @@ Suscribirse a un WebHook
 ### Example 
 ```objc
 
-SWGNewWebHookSubscription* webHookSubscription = [[SWGNewWebHookSubscription alloc] init]; // 
+SWGNewWebHookSubscription* varNewWebHookSubscription = [[SWGNewWebHookSubscription alloc] init]; // 
 
 SWGWebHooksApi*apiInstance = [[SWGWebHooksApi alloc] init];
 
 // Suscribirse a un WebHook
-[apiInstance webHooksAddWebHookSubscriptionsWithWebHookSubscription:webHookSubscription
+[apiInstance webHooksAddWebHookSubscriptionsWithVarNewWebHookSubscription:varNewWebHookSubscription
           completionHandler: ^(NSObject* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -45,7 +45,7 @@ SWGWebHooksApi*apiInstance = [[SWGWebHooksApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webHookSubscription** | [**SWGNewWebHookSubscription***](SWGNewWebHookSubscription.md)|  | 
+ **varNewWebHookSubscription** | [**SWGNewWebHookSubscription***](SWGNewWebHookSubscription.md)|  | 
 
 ### Return type
 
@@ -62,9 +62,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **webHooksDeleteWebHookSubscriptioByID**
+# **webHooksDeleteWebHookSubscriptionByID**
 ```objc
--(NSURLSessionTask*) webHooksDeleteWebHookSubscriptioByIDWithId: (NSString*) _id
+-(NSURLSessionTask*) webHooksDeleteWebHookSubscriptionByIDWithId: (NSString*) _id
         completionHandler: (void (^)(NSError* error)) handler;
 ```
 
@@ -80,10 +80,10 @@ NSString* _id = @"_id_example"; //
 SWGWebHooksApi*apiInstance = [[SWGWebHooksApi alloc] init];
 
 // Borrar suscripción a WebHook
-[apiInstance webHooksDeleteWebHookSubscriptioByIDWithId:_id
+[apiInstance webHooksDeleteWebHookSubscriptionByIDWithId:_id
           completionHandler: ^(NSError* error) {
                         if (error) {
-                            NSLog(@"Error calling SWGWebHooksApi->webHooksDeleteWebHookSubscriptioByID: %@", error);
+                            NSLog(@"Error calling SWGWebHooksApi->webHooksDeleteWebHookSubscriptionByID: %@", error);
                         }
                     }];
 ```
@@ -111,7 +111,7 @@ No authorization required
 
 # **webHooksEditWebHookSubscription**
 ```objc
--(NSURLSessionTask*) webHooksEditWebHookSubscriptionWithWebHookSubscription: (SWGNewWebHookSubscription*) webHookSubscription
+-(NSURLSessionTask*) webHooksEditWebHookSubscriptionWithWebHookSubscription: (SWGEditWebHookSubscription*) webHookSubscription
         completionHandler: (void (^)(NSError* error)) handler;
 ```
 
@@ -122,7 +122,7 @@ Editar suscripción a WebHook
 ### Example 
 ```objc
 
-SWGNewWebHookSubscription* webHookSubscription = [[SWGNewWebHookSubscription alloc] init]; // 
+SWGEditWebHookSubscription* webHookSubscription = [[SWGEditWebHookSubscription alloc] init]; // 
 
 SWGWebHooksApi*apiInstance = [[SWGWebHooksApi alloc] init];
 
@@ -139,7 +139,7 @@ SWGWebHooksApi*apiInstance = [[SWGWebHooksApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webHookSubscription** | [**SWGNewWebHookSubscription***](SWGNewWebHookSubscription.md)|  | 
+ **webHookSubscription** | [**SWGEditWebHookSubscription***](SWGEditWebHookSubscription.md)|  | 
 
 ### Return type
 

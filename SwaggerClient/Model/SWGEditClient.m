@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"_iD": @"ID", @"legalName": @"LegalName", @"commercialName": @"CommercialName", @"rFC": @"RFC", @"creditDays": @"CreditDays", @"creditAmount": @"CreditAmount", @"paymentMethod": @"PaymentMethod", @"paymentTerm": @"PaymentTerm", @"locationID": @"LocationID", @"salesEmployeeID": @"SalesEmployeeID", @"creditEmployeeID": @"CreditEmployeeID", @"priceListID": @"PriceListID", @"comment": @"Comment", @"telephone": @"Telephone", @"email": @"Email", @"accountNumber": @"AccountNumber", @"defaultDiscount": @"DefaultDiscount", @"source": @"Source", @"accountingNumber": @"AccountingNumber" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"_iD": @"ID", @"legalName": @"LegalName", @"commercialName": @"CommercialName", @"rFC": @"RFC", @"creditDays": @"CreditDays", @"creditAmount": @"CreditAmount", @"priceListID": @"PriceListID", @"accountingNumber": @"AccountingNumber", @"paymentMethod": @"PaymentMethod", @"paymentTerm": @"PaymentTerm", @"locationID": @"LocationID", @"salesEmployeeID": @"SalesEmployeeID", @"creditEmployeeID": @"CreditEmployeeID", @"comment": @"Comment", @"telephone": @"Telephone", @"email": @"Email", @"accountNumber": @"AccountNumber", @"defaultDiscount": @"DefaultDiscount", @"source": @"Source" }];
 }
 
 /**
@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"paymentMethod", @"paymentTerm", @"locationID", @"salesEmployeeID", @"creditEmployeeID", @"comment", @"telephone", @"email", @"accountNumber", @"defaultDiscount", @"source", ];
+  NSArray *optionalProperties = @[@"paymentMethod", @"paymentTerm", @"locationID", @"salesEmployeeID", @"creditEmployeeID", @"comment", @"telephone", @"email", @"accountNumber", @"defaultDiscount", @"source"];
   return [optionalProperties containsObject:propertyName];
 }
 

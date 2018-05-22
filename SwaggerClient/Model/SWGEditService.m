@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"_iD", @"code", @"title", @"currencyID", @"sATCompanyAccountID", @"measurementUnit", @"_description", @"category1ID", @"category2ID", @"category3ID", @"variableConcept", @"chargeVAT"];
+  NSArray *optionalProperties = @[@"_description", @"category1ID", @"category2ID", @"category3ID", @"variableConcept", @"chargeVAT"];
   return [optionalProperties containsObject:propertyName];
 }
 

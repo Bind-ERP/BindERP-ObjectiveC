@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"externalID": @"ExternalID", @"externalIDType": @"ExternalIDType", @"comment": @"Comment", @"startDate": @"StartDate", @"endDate": @"EndDate", @"eventType": @"EventType", @"isPublic": @"IsPublic", @"title": @"Title", @"repeatable": @"Repeatable", @"repeatInterval": @"RepeatInterval", @"repeatType": @"RepeatType", @"repetitions": @"Repetitions" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"comment": @"Comment", @"startDate": @"StartDate", @"endDate": @"EndDate", @"eventType": @"EventType", @"isPublic": @"IsPublic", @"title": @"Title", @"repeatable": @"Repeatable", @"repeatInterval": @"RepeatInterval", @"repeatType": @"RepeatType", @"repetitions": @"Repetitions", @"externalID": @"ExternalID", @"externalIDType": @"ExternalIDType" }];
 }
 
 /**
@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"externalID", @"externalIDType", @"repeatInterval", @"repeatType", @"repetitions"];
+  NSArray *optionalProperties = @[@"repeatInterval", @"repeatType", @"repetitions", @"externalID", @"externalIDType"];
   return [optionalProperties containsObject:propertyName];
 }
 
